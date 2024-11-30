@@ -12,9 +12,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body className="min-h-screen bg-gray-100 flex flex-col">
-        <Header />
-        <main className="container mx-auto flex-grow p-4">{children}</main>
-        <Footer />
+        {/* Locomotive Scroll Container */}
+        <div data-scroll-container>
+          {/* Header */}
+          <Header />
+          {/* Main Content */}
+          <main className="container mx-auto flex-grow p-4">{children}</main>
+          {/* Footer */}
+          <Footer />
+        </div>
       </body>
     </html>
   );
