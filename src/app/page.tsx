@@ -51,18 +51,19 @@ export default function LandingPage() {
   {/* Left Side: Name */}
   <div className="text-left">
     <h1 className="text-6xl font-bold text-gray-800 leading-snug">
-      Hi, I'm <span className="text-blue-500">[Kate]</span>.
+      Hi, I'm <span className="text-blue-500">Kate</span>.
     </h1>
     <p className="mt-4 text-xl text-gray-600">
-      A passionate developer building impactful experiences.
+      A passionate engineer dedicated to <br />building impactful experiences.
     </p>
   </div>
 
   {/* Right Side: Profile Picture */}
   <div
-    className="relative w-126 h-126 rounded-full bg-gray-400 overflow-hidden border-2 border-gray-300 opacity-60 translate-x-12"
-    data-scroll
-    data-scroll-speed="2"
+   style={{ width: "46rem", height: "46rem" }} /* 98 * 0.25rem */
+   className="relative rounded-full bg-gray-400 overflow-hidden border-2 border-gray-300 opacity-80 translate-x-12"
+   data-scroll
+   data-scroll-speed="2"
   >
     <img
       src="/profile.jpg"
