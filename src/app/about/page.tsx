@@ -9,19 +9,19 @@ export default function About() {
       title: "Acting Engineering Manager",
       company: "Tray.ai",
       duration: "Feb 2024 - July 2024",
-      description: "Developed scalable web applications and led frontend architecture design.",
+      description: "Held 1on1s and feedback reviews with my team;  Acted as theface of the team to the company in strategy discussions and technical decision making; Owned team ceremonies, and led cross-team hackathons focused on improved efficiency and infusing our processes with AI. During the hackathon I led intro, project planning and wrap-up sessions, and provided support and technical guidence for the different teams implementations.",
     },
     {
       title: "Software Engineer",
       company: "Tray.ai",
       duration: "Jan 2021 - Sept 2024",
-      description: "Developed scalable web applications and led frontend architecture design.",
+      description: "Team lead, 2+ years: led standups, liaised with Project Manager and EM, technical escalation point for the team.Mentor for new team members: led 1on1 training; created onboarding documentation and tools; held group training sessions.Built customer-facing JS and TS applications based on external REST, SOAP and GraphQL APIs, such as Microsoft, Slack, AWS and Netsuite. Project lead: ReactJS tool to estimate customer platform costs; project manager and main developer; worked closely with sales and product. Project lead, addressing deprecations in external APIs using RSS feed monitoring and AI: an overhaul of our internal engineering processes; increased platform reliability and stability, improving the customer experience. Knowledge sharing: held regular sessions e.g. AI prompt engineering workshop, enablement sessions, and new process training; created process documentation.",
     },
     {
       title: "Assistant Scientific Officer",
       company: "Forensic Science NI",
       duration: "2016 - 2020",
-      description: "Worked on responsive websites and collaborated on multiple client projects.",
+      description: "Superuser, Sample Manager LIMS software - Identified the needs of different users, created user stories; evaluated user change requests, translating this to the software’s capabilities; adapted the software to fit our business needs with some basic C# programming; documented changes and change requests.",
     },
   ];
 
