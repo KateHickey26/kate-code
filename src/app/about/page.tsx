@@ -21,7 +21,7 @@ export default function About() {
       title: "Assistant Scientific Officer",
       company: "Forensic Science NI",
       duration: "2016 - 2020",
-      description: "Superuser, Sample Manager LIMS software - Identified the needs of different users, created user stories; evaluated user change requests, translating this to the software’s capabilities; adapted the software to fit our business needs with some basic C# programming; documented changes and change requests.",
+      description: "This role mainly involved Examining crime scene evidence. /n I was also a superuser of our Sample Manager LIMS software. In this role I modified the software to suit different labs. To do this I: identified the needs of each lab's users, using user stories; evaluated user change requests, translating this to the software’s capabilities; adapted the software to fit our business needs with some basic C# programming; documented changes and change requests.",
     },
   ];
 
