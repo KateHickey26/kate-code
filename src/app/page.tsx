@@ -144,7 +144,7 @@ export default function LandingPage() {
         <div className="w-1/2 flex flex-col justify-center px-6">
           <h2 className="text-4xl font-semibold mb-4">About Me</h2>
           <p className="text-lg text-gray-300 leading-relaxed">
-            I'm a passionate developer with experience in building scalable web
+            I'm a passionate professional engineer with experience in building scalable web
             applications and designing impactful user experiences. I love
             creating websites that not only function beautifully but also tell
             a story.
