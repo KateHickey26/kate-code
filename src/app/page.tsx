@@ -144,14 +144,13 @@ export default function LandingPage() {
         <div className="w-1/2 flex flex-col justify-center px-6">
           <h2 className="text-4xl font-semibold mb-4">About Me</h2>
           <p className="text-lg text-gray-300 leading-relaxed">
-            I'm a passionate professional engineer with experience in building scalable web
-            applications and designing impactful user experiences. I love
-            creating websites that not only function beautifully but also tell
-            a story.
+            I’m an engineering professional with a passion for both technology and leadership. With 5 years of coding experience and 3 years leading an engineering team, I’ve worked at the intersection of software development, team collaboration, and project execution.
           </p>
           <p className="mt-4 text-lg text-gray-300 leading-relaxed">
-            When I'm not coding, you can find me exploring new places, reading
-            books, or sharing my knowledge through blogs.
+          I thrive on helping teams reach their full potential—whether that’s through effective project planning, organisation, or people management. I believe that great engineering isn’t just about writing code; it’s about creating an environment where teams can innovate, grow, and deliver their best work.
+          </p>
+          <p className="mt-4 text-lg text-gray-300 leading-relaxed">
+          Beyond the world of tech, I’m always looking for new experiences, whether that’s in travel, books, or the latest in digital trends.
           </p>
         </div>
       </section>
