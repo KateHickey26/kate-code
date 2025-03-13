@@ -54,7 +54,7 @@ export default function LandingPage() {
       Hi, I'm <span className="text-blue-500">Kate</span>.
     </h1>
     <p className="mt-4 text-xl text-gray-600">
-      A passionate engineer dedicated to <br />building impactful experiences.
+    An engineering professional specializing in <br />team leadership, project management, <br />and agile development.
     </p>
   </div>
 
