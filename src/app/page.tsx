@@ -51,7 +51,10 @@ export default function LandingPage() {
   {/* Left Side: Name */}
   <div className="text-left">
     <h1 className="text-6xl font-bold text-gray-800 leading-snug">
-      Hi, I'm <span className="text-blue-500">Kate</span>.
+      <a href="#about" className=" transition-colors">
+        Hi, I'm <span className="text-blue-500 hover:text-blue-200">Kate</span>.
+        </a>
+     
     </h1>
     <p className="mt-4 text-xl text-gray-600">
     An engineering professional specializing in <br />team leadership, project management, <br />and agile development.
@@ -60,10 +63,10 @@ export default function LandingPage() {
 
   {/* Right Side: Profile Picture */}
   <div
-   style={{ width: "46rem", height: "46rem" }} /* 98 * 0.25rem */
+   style={{ width: "40rem", height: "40rem" }} /* 98 * 0.25rem */
    className="relative rounded-full bg-gray-400 overflow-hidden border-2 border-gray-300 opacity-80 translate-x-12"
    data-scroll
-   data-scroll-speed="2"
+   data-scroll-speed="9"
   >
     <img
       src="/profile.jpg"
@@ -144,13 +147,13 @@ export default function LandingPage() {
         <div className="w-1/2 flex flex-col justify-center px-6">
           <h2 className="text-4xl font-semibold mb-4">About Me</h2>
           <p className="text-lg text-gray-300 leading-relaxed">
-            I’m an engineering professional with a passion for both technology and leadership. With 5 years of coding experience and 3 years leading an engineering team, I’ve worked at the intersection of software development, team collaboration, and project execution.
+            I’m an engineering professional with a passion for both technology and leadership. With 5 years of hands-on coding experience and a passion for leadership, I’ve spent the past three years leading teams and driving projects forward with a focus on agility, collaboration, and efficiency.
           </p>
           <p className="mt-4 text-lg text-gray-300 leading-relaxed">
-          I thrive on helping teams reach their full potential—whether that’s through effective project planning, organisation, or people management. I believe that great engineering isn’t just about writing code; it’s about creating an environment where teams can innovate, grow, and deliver their best work.
+          I thrive on helping teams reach their full potential - whether that’s through effective project planning, organisation, or people management. I believe that great engineering isn’t just about writing code; it’s about creating an environment where teams can innovate, grow, and deliver their best work.
           </p>
           <p className="mt-4 text-lg text-gray-300 leading-relaxed">
-          Beyond the world of tech, I’m always looking for new experiences, whether that’s in travel, books, or the latest in digital trends.
+          Beyond the world of tech, I’m always looking for new experiences in travel, books, or the latest in digital trends.
           </p>
         </div>
       </section>

@@ -48,7 +48,12 @@ export default function About() {
     <div className="container mx-auto p-4">
       <h1 className="text-4xl font-bold mb-6 text-gray-700">About</h1>
       <p className="text-lg mb-8 text-gray-500">
-        Hi, I’m Kate, a passionate developer with a love for building impactful web applications.
+        Hi, I’m Kate, an engineering professional specializing in team leadership, project management, and agile development.<br /><br />
+        I’m an engineering professional with a passion for both technology and leadership. With 5 years of coding experience and 3 years leading an engineering team, I’ve worked at the intersection of software development, team collaboration, and project execution.
+        <br /><br />
+I thrive on helping teams reach their full potential—whether that’s through effective project planning, organisation, or people management. I believe that great engineering isn’t just about writing code; it’s about creating an environment where teams can innovate, grow, and deliver their best work.
+<br /><br />
+Beyond the world of tech, I’m always looking for new experiences, whether that’s in travel, books, or the latest in digital trends.
       </p>
 
       {/* Experience Section */}
