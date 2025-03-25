@@ -27,7 +27,14 @@ export default function Portfolio() {
       title: "kate code",
       description:
         "My personal website!",
-        link: "/portfolio/kate-code",
+        link: "/portfolio/KateCode",
+    },
+    {
+      id: 5,
+      title: "Charted",
+      description:
+        "A minimalist web app that lets you track which countries you've visited on an interactive world map.",
+        link: "/portfolio/Charted",
     },
   ];
 

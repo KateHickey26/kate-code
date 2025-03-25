@@ -1,4 +1,4 @@
-export default function GuessTheFlag() {
+export default function KateCode() {
     return (
       <div>
         <h1 className="text-4xl font-bold text-gray-500">kate code</h1>
