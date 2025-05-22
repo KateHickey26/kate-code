@@ -7,6 +7,7 @@ interface FormData {
   name: string;
   email: string;
   message: string;
+  middleName?: string; // Honeypot
 }
 
 export default function Contact() {
@@ -75,6 +76,17 @@ export default function Contact() {
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Honeypot field */}
+          <input
+            type="text"
+            name="middleName"
+            value={(formData as any).middleName || ""}
+            onChange={handleChange}
+            className="hidden"
+            tabIndex={-1}
+            autoComplete="off"
+          />
+          {/* Main fields */}
           <input
             type="text"
             name="name"
