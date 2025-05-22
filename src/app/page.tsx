@@ -10,185 +10,102 @@ export default function LandingPage() {
   useEffect(() => {
     if (!scrollRef.current) return;
 
-    // Initialize Locomotive Scroll
     const scroll = new LocomotiveScroll({
       el: scrollRef.current,
       smooth: true,
       multiplier: 1,
     });
 
-    console.log("Locomotive Scroll initialized", scroll); // Debug log
-
-
-    return () => {
-      scroll.destroy(); // Clean up on unmount
-    };
+    return () => scroll.destroy();
   }, []);
-
-  const educationData = [
-  {
-    title: "MSc Software Engineering",
-    institution: "University of Glasgow",
-    duration: "2020 - 2021",
-    description: "Achieved Distinction. Specialized in web development and AI.",
-  },
-  {
-    title: "BSc Biology",
-    institution: "LJMU",
-    duration: "2016 - 2020",
-    description: "Graduated with a 2:1. Thesis focused on genetics.",
-  },
-];
 
   return (
     <div ref={scrollRef} data-scroll-container>
-      {/* Intro Section */}
+      {/* Hero Section */}
       <section
-  className="h-screen bg-gray-200 flex items-center justify-between px-12"
-  data-scroll
-  data-scroll-speed="1"
->
-  {/* Left Side: Name */}
-  <div className="text-left">
-    <h1 className="text-6xl font-bold text-gray-800 leading-snug">
-      <a href="#about" className=" transition-colors">
-        Hi, I'm <span className="text-blue-500 hover:text-blue-200">Kate</span>.
-        </a>
-     
-    </h1>
-    <p className="mt-4 text-xl text-gray-600">
-    An engineering professional specializing in <br />team leadership, project management, <br />and agile development.
-    </p>
-  </div>
+        className="h-screen bg-[#f4f0e4] relative px-20 flex items-center justify-between overflow-hidden"
+        data-scroll
+        data-scroll-speed="1"
+      >
+        {/* Intro text */}
+        <div className="max-w-xl z-10 ml-28" data-scroll data-scroll-speed="1">
+          <h1 className="text-[5rem] font-serif font-bold leading-[1.1] text-[#2d3d37]">
+            Hi, I’m <span className="text-[#2d7d6b]">Kate</span>.
+          </h1>
+          <p className="mt-6 text-2xl text-[#4e5e58]">
+            A passionate engineer building impactful experiences.
+          </p>
 
-  {/* Right Side: Profile Picture */}
-  <div
-   style={{ width: "40rem", height: "40rem" }} /* 98 * 0.25rem */
-   className="relative rounded-full bg-gray-400 overflow-hidden border-2 border-gray-300 opacity-80 translate-x-12"
-   data-scroll
-   data-scroll-speed="9"
-  >
-    <img
-      src="/profile.jpg"
-      alt="Kate"
-      className="w-full h-full object-cover"
-    />
-  </div>
-</section>
+          {/* Buttons */}
+          <div className="mt-8 flex flex-wrap gap-4">
+            <a href="#portfolio" className="bg-[#264e46] text-white px-6 py-3 rounded-full shadow-md hover:opacity-90">Portfolio</a>
+            <a href="#blog" className="bg-[#d99a2b] text-white px-6 py-3 rounded-full shadow-md hover:opacity-90">Blog</a>
+            <a href="#contact" className="bg-[#cfc7b7] text-[#2d3d37] px-6 py-3 rounded-full shadow-md hover:opacity-90">Contact</a>
+          </div>
+        </div>
+
+        {/* Profile Image */}
+        <div
+          className="w-[26rem] h-[26rem] rounded-full overflow-hidden border-4 border-[#d3c6ae] opacity-90 translate-x-6 mr-12"
+          data-scroll
+          data-scroll-speed="-1"
+        >
+          <img
+            src="/profile.jpg"
+            alt="Kate"
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        {/* Decorative Elements */}
+        <div className="absolute top-12 left-12 w-10 h-10 bg-[#d99a2b] rounded-full opacity-60" data-scroll data-scroll-speed="4" />
+        <div className="absolute top-24 right-20 w-14 h-14 bg-[#2d7d6b] rotate-12 opacity-40" data-scroll data-scroll-speed="-4" />
+        <div className="absolute bottom-12 left-24 w-8 h-8 bg-[#cfc7b7] rounded-full opacity-70" data-scroll data-scroll-speed="6" />
+        <div className="absolute top-10 left-8 w-6 h-10 bg-[#d99a2b] rounded-full opacity-60" data-scroll data-scroll-speed="3" />
+        <div className="absolute bottom-14 right-10 w-12 h-12 bg-[#2d7d6b] rounded-full rotate-45 opacity-40" data-scroll data-scroll-speed="10" />
+        <div className="absolute bottom-20 right-1/3 w-6 h-6 bg-[#cfc7b7] rounded-full opacity-60" data-scroll data-scroll-speed="4" />
+
+        <div className="absolute top-10 left-[45%] w-8 h-8 bg-[#264e46] rounded-full opacity-50" data-scroll data-scroll-speed="3" />
+        <div className="absolute bottom-10 left-[40%] w-20 h-[2px] bg-[#d99a2b]" data-scroll data-scroll-speed="-5" />
+        <div className="absolute top-[25%] left-[60%] w-10 h-5 rounded-t-full bg-transparent border-t-[5px] border-[#cfc7b7]" data-scroll data-scroll-speed="2" />
+        {/* Stars */}
+        <svg className="absolute top-6 right-[15%] w-36 h-36 text-[#2d7d6b] opacity-40" data-scroll data-scroll-speed="6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l1.09 3.41L16 6l-2.45 1.78L14 11l-2-1.5L10 11l.45-3.22L8 6l2.91-.59z"/></svg>
+        <svg className="absolute bottom-4 left-[20%] w-28 h-28 text-[#d99a2b] opacity-50" data-scroll data-scroll-speed="7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l1.09 3.41L16 6l-2.45 1.78L14 11l-2-1.5L10 11l.45-3.22L8 6l2.91-.59z"/></svg>
+        {/* Sparkles */}
+        <div className="absolute top-10 left-[30%] w-10 h-10 bg-[#f4f0e4] rotate-45" data-scroll data-scroll-speed="8" style={{ clipPath: 'polygon(50% 0%, 60% 35%, 100% 50%, 60% 65%, 50% 100%, 40% 65%, 0% 50%, 40% 35%)' }} />
+        <div className="absolute bottom-10 right-[25%] w-10 h-10 bg-[#cfc7b7] rotate-45" data-scroll data-scroll-speed="9" style={{ clipPath: 'polygon(50% 0%, 60% 35%, 100% 50%, 60% 65%, 50% 100%, 40% 65%, 0% 50%, 40% 35%)' }} />
+      </section>
 
       {/* About Section */}
       <section
         id="about"
-        className="h-screen bg-gray-800 text-white flex px-12 relative"
+        className="min-h-screen bg-[#2d3d37] text-white flex items-center justify-center px-8 relative -mt-[1px]"
         data-scroll
         data-scroll-speed="2"
       >
-        {/* Vertical Line */}
-        <div className="absolute left-1/2 top-1/4 h-1/2 w-px bg-gray-600"></div>
-
-        {/* Left Side: Links */}
-        <div className="w-1/2 flex flex-col items-center justify-center space-y-6">
-          <ul className="space-y-6 text-lg">
-          <li className="flex items-center justify-start">
-        <span className="mr-2 text-blue-400">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-            stroke="currentColor"
-            className="w-5 h-5"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-          </svg>
-        </span>
-        <a href="#portfolio" className="hover:text-blue-200 transition-colors">
-          See some of my work at my Portfolio
-        </a>
-      </li>
-      <li className="flex items-center justify-start">
-        <span className="mr-2 text-blue-400">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-            stroke="currentColor"
-            className="w-5 h-5"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-          </svg>
-        </span>
-        <a href="#blog" className="hover:text-blue-200 transition-colors">
-          Get to know me by checking out my blog
-        </a>
-      </li>
-      <li className="flex items-center justify-start">
-        <span className="mr-2 text-blue-400">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-            stroke="currentColor"
-            className="w-5 h-5"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-          </svg>
-        </span>
-        <a href="#contact" className="hover:text-blue-200 transition-colors">
-          Want to reach out? Contact me <span className="text-blue-400 ">here</span>
-        </a>
-      </li>
-          </ul>
-        </div>
-       
-        {/* Right Side: Blurb */}
-        <div className="w-1/2 flex flex-col justify-center px-6">
-          <h2 className="text-4xl font-semibold mb-4">About Me</h2>
-          <p className="text-lg text-gray-300 leading-relaxed">
-            I’m an engineering professional with a passion for both technology and leadership. With 5 years of hands-on coding experience and a passion for leadership, I’ve spent the past three years leading teams and driving projects forward with a focus on agility, collaboration, and efficiency.
-          </p>
-          <p className="mt-4 text-lg text-gray-300 leading-relaxed">
-          I thrive on helping teams reach their full potential - whether that’s through effective project planning, organisation, or people management. I believe that great engineering isn’t just about writing code; it’s about creating an environment where teams can innovate, grow, and deliver their best work.
-          </p>
-          <p className="mt-4 text-lg text-gray-300 leading-relaxed">
-          Beyond the world of tech, I’m always looking for new experiences in travel, books, or the latest in digital trends.
+        <div className="max-w-2xl text-center z-10">
+          <h2 className="text-4xl font-semibold mb-6 text-[#f4f0e4]">About Me</h2>
+          <p className="text-xl leading-relaxed text-[#d3d3c3]">
+            I’m a developer with a love for crafting intuitive, scalable web
+            experiences. I combine design and logic to make projects feel both
+            functional and beautiful. Outside of code, I read, explore, and
+            share insights through writing.
           </p>
         </div>
-      </section>
 
-      {/* Education Section */}
-      <section
-        id="education"
-        className="h-auto bg-gray-900 py-12 px-6 relative"
-        data-scroll
-        data-scroll-speed="1"
-      >
-        <h2 className="text-4xl font-semibold text-center mb-8">Education</h2>
-        <div className="relative">
-          {educationData.map((item, index) => (
-            <div
-              key={index}
-              className="flex items-center mb-12 "
-              data-scroll
-              data-scroll-class="fade-in"
-            >
-              {/* Timeline Dot */}
-              <div className="w-8 h-8 bg-blue-400 rounded-full flex-shrink-0"></div>
-
-              {/* Timeline Content */}
-              <div className="ml-6">
-                <h3 className="text-xl font-bold">{item.title}</h3>
-                <p className="text-gray-100">{item.institution}</p>
-                <span className="block text-sm text-gray-100">
-                  {item.duration}
-                </span>
-                <p className="text-gray-100 mt-2">{item.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+        {/* Decorative Shapes */}
+        <div className="absolute top-10 left-10 w-10 h-10 bg-[#d99a2b] rounded-full opacity-50" data-scroll data-scroll-speed="6" />
+        <div className="absolute bottom-10 right-10 w-8 h-8 bg-[#cfc7b7] rounded-full opacity-40" data-scroll data-scroll-speed="-5" />
+        <div className="absolute bottom-20 left-1/4 w-6 h-6 bg-[#264e46] rounded-full opacity-60" data-scroll data-scroll-speed="5" />
+        <div className="absolute top-1/3 right-[30%] w-6 h-6 border-2 border-[#f4f0e4] rounded-full" data-scroll data-scroll-speed="6" />
+        <div className="absolute top-10 left-[45%] w-20 h-[2px] bg-[#d99a2b]" data-scroll data-scroll-speed="-6" />
+        <div className="absolute bottom-[30%] left-[60%] w-10 h-5 rounded-t-full bg-transparent border-t-[5px] border-[#cfc7b7]" data-scroll data-scroll-speed="5" />
+        {/* Stars */}
+        <svg className="absolute top-6 left-[25%] w-32 h-32 text-[#f4f0e4] opacity-30" data-scroll data-scroll-speed="6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l1.09 3.41L16 6l-2.45 1.78L14 11l-2-1.5L10 11l.45-3.22L8 6l2.91-.59z"/></svg>
+        <svg className="absolute bottom-8 right-[30%] w-28 h-28 text-[#d99a2b] opacity-40" data-scroll data-scroll-speed="7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l1.09 3.41L16 6l-2.45 1.78L14 11l-2-1.5L10 11l.45-3.22L8 6l2.91-.59z"/></svg>
+        {/* Sparkles */}
+        <div className="absolute top-[40%] left-[15%] w-10 h-10 bg-[#f4f0e4] rotate-45" data-scroll data-scroll-speed="9" style={{ clipPath: 'polygon(50% 0%, 60% 35%, 100% 50%, 60% 65%, 50% 100%, 40% 65%, 0% 50%, 40% 35%)' }} />
+        <div className="absolute bottom-[20%] right-[20%] w-10 h-10 bg-[#d99a2b] rotate-45" data-scroll data-scroll-speed="10" style={{ clipPath: 'polygon(50% 0%, 60% 35%, 100% 50%, 60% 65%, 50% 100%, 40% 65%, 0% 50%, 40% 35%)' }} />
       </section>
     </div>
   );

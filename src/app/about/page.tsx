@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { FaChevronDown, FaChevronRight } from "react-icons/fa";
+import Image from "next/image";
 
 export default function About() {
   const experiences = [
@@ -9,19 +10,22 @@ export default function About() {
       title: "Manager, Customer Engineering",
       company: "Tray.ai",
       duration: "Feb 2024 - Sept 2024",
-      description: "I finished my career at Tray as the manager of my amaing team. /n As manager I: Held 1on1s and feedback reviews with my team;  Acted as theface of the team to the company in strategy discussions and technical decision making; Owned team ceremonies, and led cross-team hackathons focused on improved efficiency and infusing our processes with AI. During the hackathon I led intro, project planning and wrap-up sessions, and provided support and technical guidence for the different teams implementations.",
+      description:
+        "Held 1on1s and feedback reviews with my team; acted as the face of the team to the company in strategy discussions and technical decision making; owned team ceremonies; led cross-team hackathons focused on efficiency and AI; supported teams with technical guidance.",
     },
     {
       title: "Software Engineer",
       company: "Tray.ai",
       duration: "Jan 2021 - Feb 2024",
-      description: "Team lead, 2+ years: led standups, liaised with Project Manager and EM, technical escalation point for the team.Mentor for new team members: led 1on1 training; created onboarding documentation and tools; held group training sessions. Built customer-facing JS and TS applications based on external REST, SOAP and GraphQL APIs, such as Microsoft, Slack, AWS and Netsuite. Project lead: ReactJS tool to estimate customer platform costs; project manager and main developer; worked closely with sales and product. Project lead, addressing deprecations in external APIs using RSS feed monitoring and AI: an overhaul of our internal engineering processes; increased platform reliability and stability, improving the customer experience. Knowledge sharing: held regular sessions e.g. AI prompt engineering workshop, enablement sessions, and new process training; created process documentation.",
+      description:
+        "Team lead for 2+ years, mentor, project lead for customer-facing tools and internal processes, knowledge sharing through enablement sessions, and AI-based automation initiatives.",
     },
     {
       title: "Assistant Scientific Officer",
       company: "Forensic Science NI",
       duration: "2016 - 2020",
-      description: "This role mainly involved Examining crime scene evidence. /n I was also a superuser of our Sample Manager LIMS software. In this role I modified the software to suit different labs. To do this I: identified the needs of each lab's users, using user stories; evaluated user change requests, translating this to the software’s capabilities; adapted the software to fit our business needs with some basic C# programming; documented changes and change requests.",
+      description:
+        "Examined crime scene evidence and was a superuser of our LIMS software, adapting it using user needs, change requests, and C# scripting.",
     },
   ];
 
@@ -30,96 +34,127 @@ export default function About() {
       title: "Software Engineering MSc",
       company: "University of Glasgow",
       duration: "2020 - 2021",
-      description: "Grade: distinction",
+      description: "Grade: Distinction",
     },
     {
       title: "Biology",
       company: "LJMU",
       duration: "2016 - 2020",
-      description: "Grade: 2:1, Highlights: Distinction grade in thesis.",
+      description: "Grade: 2:1, Highlights: Distinction in thesis",
     },
   ];
 
-  // State for section toggles
-  const [isExperienceOpen, setIsExperienceOpen] = useState(false);
-  const [isEducationOpen, setIsEducationOpen] = useState(false);
+  const [openExperienceIndex, setOpenExperienceIndex] = useState<number | null>(null);
+  const [openEducationIndex, setOpenEducationIndex] = useState<number | null>(null);
+
+  const toggleExperience = (index: number) => {
+    setOpenExperienceIndex(prev => (prev === index ? null : index));
+  };
+
+  const toggleEducation = (index: number) => {
+    setOpenEducationIndex(prev => (prev === index ? null : index));
+  };
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-4xl font-bold mb-6 text-gray-700">About</h1>
-      <p className="text-lg mb-8 text-gray-500">
-        Hi, I’m Kate, an engineering professional specializing in team leadership, project management, and agile development.<br /><br />
-        I’m an engineering professional with a passion for both technology and leadership. With 5 years of coding experience and 3 years leading an engineering team, I’ve worked at the intersection of software development, team collaboration, and project execution.
-        <br /><br />
-I thrive on helping teams reach their full potential—whether that’s through effective project planning, organisation, or people management. I believe that great engineering isn’t just about writing code; it’s about creating an environment where teams can innovate, grow, and deliver their best work.
-<br /><br />
-Beyond the world of tech, I’m always looking for new experiences, whether that’s in travel, books, or the latest in digital trends.
-      </p>
+    <div className="bg-[#22302b] text-[#f4f0e4] py-20 px-6 sm:px-10 md:px-20 lg:px-32">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-12">
+        {/* Left - Image */}
+        <div className="shrink-0">
+          <Image
+            src="/profile.jpg"
+            alt="Kate"
+            width={300}
+            height={300}
+            className="rounded-2xl border-4 border-[#2d7d6b]"
+          />
+        </div>
 
-      {/* Experience Section */}
-      <section>
-      <h2
-  className="text-3xl font-semibold mb-4 text-gray-700 cursor-pointer"
-  onClick={() => setIsExperienceOpen(!isExperienceOpen)}
->
-  {isExperienceOpen ? <FaChevronDown /> : <FaChevronRight />} Experience
-</h2>
-        {isExperienceOpen && (
-          <div className="relative border-l-2 border-gray-200">
-            {experiences.map((exp, index) => (
+        {/* Right - Intro */}
+        <div>
+          <h1 className="text-5xl font-bold mb-6 font-serif">Hi, I’m Kate</h1>
+          <p className="text-lg leading-relaxed mb-4">
+            I'm an engineering professional specializing in team leadership, project management, and agile development.
+          </p>
+          <p className="text-lg leading-relaxed mb-4">
+            With 5 years of coding experience and 3 years leading an engineering team, I’ve worked at the intersection of software development, team collaboration, and project execution.
+          </p>
+          <p className="text-lg leading-relaxed">
+            Outside of tech, I’m always looking for new experiences—whether that’s in travel, books, or digital innovation.
+          </p>
+        </div>
+      </div>
+
+      {/* Experience */}
+      <div className="mt-16 max-w-4xl mx-auto px-4 sm:px-6 md:px-0">
+        <h2 className="text-3xl font-semibold mb-8 flex items-center gap-2">
+          <FaChevronDown className="text-[#d99a2b]" /> Experience
+        </h2>
+        <div className="space-y-6">
+          {experiences.map((exp, index) => (
+            <div key={index} className="cursor-pointer">
               <div
-                key={index}
-                className="mb-6 ml-6 group"
+                className="flex justify-between items-center"
+                onClick={() => toggleExperience(index)}
               >
-                {/* Parent Item */}
-                <div className="cursor-pointer flex justify-between items-center">
-                  <h3 className="text-xl font-bold text-gray-700">{exp.title}</h3>
-                </div>
-
-                {/* Nested Content (Hover to Expand) */}
-                <div className="max-h-0 overflow-hidden group-hover:max-h-screen transition-all duration-300 delay-200">
-                  <span className="block text-sm text-gray-600">{exp.company}</span>
-                  <span className="block text-sm text-gray-600">{exp.duration}</span>
-                  <p className="text-gray-700 mt-2">{exp.description}</p>
-                </div>
+                <h3 className="text-xl font-bold mb-1">{exp.title}</h3>
+                {openExperienceIndex === index ? (
+                  <FaChevronDown className="text-[#cfc7b7]" />
+                ) : (
+                  <FaChevronRight className="text-[#cfc7b7]" />
+                )}
               </div>
-            ))}
-          </div>
-        )}
-      </section>
-
-      {/* Education Section */}
-      <section>
-      <h2
-  className="text-3xl font-semibold mb-4 text-gray-700 cursor-pointer"
-  onClick={() => setIsEducationOpen(!isEducationOpen)}
->
-  {isEducationOpen ? <FaChevronDown /> : <FaChevronRight />} Education
-</h2>
-        {isEducationOpen && (
-          <div className="relative border-l-2 border-gray-200">
-            {education.map((edu, index) => (
+              <p className="text-sm text-[#cfc7b7] mb-1">
+                {exp.company} • {exp.duration}
+              </p>
               <div
-                key={index}
-                className="mb-6 ml-6 group"
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                  openExperienceIndex === index ? "max-h-[200px] mt-2" : "max-h-0"
+                }`}
               >
-                {/* Parent Item */}
-                <div className="cursor-pointer flex justify-between items-center">
-                  <h3 className="text-xl font-bold text-gray-700">{edu.title}</h3>
-                </div>
-
-                {/* Nested Content (Hover to Expand) */}
-                <div className="max-h-0 overflow-hidden group-hover:max-h-screen transition-all duration-300 delay-200">
-
-                  <span className="block text-sm text-gray-500">{edu.company}</span>
-                  <span className="block text-sm text-gray-500">{edu.duration}</span>
-                  <p className="text-gray-700 mt-2">{edu.description}</p>
-                </div>
+                <p className="text-base text-[#e0e3dc] leading-relaxed">
+                  {exp.description}
+                </p>
               </div>
-            ))}
-          </div>
-        )}
-      </section>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Education */}
+      <div className="mt-16 max-w-4xl mx-auto px-4 sm:px-6 md:px-0">
+        <h2 className="text-3xl font-semibold mb-8 flex items-center gap-2">
+          <FaChevronDown className="text-[#d99a2b]" /> Education
+        </h2>
+        <div className="space-y-6">
+          {education.map((edu, index) => (
+            <div key={index} className="cursor-pointer">
+              <div
+                className="flex justify-between items-center"
+                onClick={() => toggleEducation(index)}
+              >
+                <h3 className="text-xl font-bold mb-1">{edu.title}</h3>
+                {openEducationIndex === index ? (
+                  <FaChevronDown className="text-[#cfc7b7]" />
+                ) : (
+                  <FaChevronRight className="text-[#cfc7b7]" />
+                )}
+              </div>
+              <p className="text-sm text-[#cfc7b7] mb-1">
+                {edu.company} • {edu.duration}
+              </p>
+              <div
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                  openEducationIndex === index ? "max-h-[200px] mt-2" : "max-h-0"
+                }`}
+              >
+                <p className="text-base text-[#e0e3dc] leading-relaxed">
+                  {edu.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

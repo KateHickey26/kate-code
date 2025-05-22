@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 
 interface FormData {
   name: string;
@@ -40,8 +41,8 @@ export default function Contact() {
       }
 
       const data = await res.json();
-      setStatus(data.message); // Show success message
-      setFormData({ name: "", email: "", message: "" }); // Clear the form
+      setStatus(data.message);
+      setFormData({ name: "", email: "", message: "" });
     } catch (error: any) {
       console.error(error.message);
       setStatus("Error submitting form. Please try again.");
@@ -49,55 +50,68 @@ export default function Contact() {
   };
 
   return (
-    <div>
-      <h1 className="text-4xl font-bold text-gray-700">Contact Me</h1>
-      <p className="mt-4 text-lg text-gray-600">
-        I’d love to hear from you! Use the form below to send me a message.
-      </p>
-      <form onSubmit={handleSubmit} className="mt-6 space-y-4">
-  <div>
-    <label className="block text-gray-700">Name</label>
-    <input
-      type="text"
-      name="name"
-      value={formData.name}
-      onChange={handleChange}
-      className="w-full p-2 border rounded text-gray-600 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-      placeholder="Enter your name"
-      required
-    />
-  </div>
-  <div>
-    <label className="block text-gray-700">Email</label>
-    <input
-      type="email"
-      name="email"
-      value={formData.email}
-      onChange={handleChange}
-      className="w-full p-2 border rounded text-gray-600 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-      placeholder="Enter your email"
-      required
-    />
-  </div>
-  <div>
-    <label className="block text-gray-700">Message</label>
-    <textarea
-      name="message"
-      value={formData.message}
-      onChange={handleChange}
-      className="w-full p-2 border rounded text-gray-600 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-      placeholder="Write your message here"
-      required
-    ></textarea>
-  </div>
-  <button
-    type="submit"
-    className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-  >
-    Send
-  </button>
-</form>
-      {status && <p className="mt-4 text-gray-600">{status}</p>}
+    <div className="bg-[#22302b] text-[#f4f0e4] py-20 px-6 sm:px-10 md:px-20 lg:px-32">
+      <div className="max-w-3xl mx-auto text-center">
+        <h1 className="text-5xl font-bold font-serif mb-6">Let’s Connect</h1>
+        <p className="text-lg mb-8">
+          I'm currently open to new opportunities and 
+          <br></br>collaborations. 
+          </p>
+          <p className="text-lg mb-8">  
+          Whether you have a project in mind or just want to chat,
+          <br>
+          </br> feel free to reach out - I'd love to hear from you!
+        </p>
+        <div className="flex justify-center space-x-6 text-2xl mb-12">
+          {/* <a href="mailto:kate@example.com" className="hover:text-[#d99a2b] transition-colors">
+            <FaEnvelope />
+          </a> */}
+          <a href="https://github.com/KateHickey26" target="_blank" className="hover:text-[#d99a2b] transition-colors">
+            <FaGithub />
+          </a>
+          <a href="https://www.linkedin.com/in/k-hickey/" target="_blank" className="hover:text-[#d99a2b] transition-colors">
+            <FaLinkedin />
+          </a>
+        </div>
+
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Name"
+            className="w-full bg-transparent border-b-2 border-[#cfc7b7] p-2 placeholder-[#cfc7b7] text-[#f4f0e4] focus:outline-none"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Email"
+            className="w-full bg-transparent border-b-2 border-[#cfc7b7] p-2 placeholder-[#cfc7b7] text-[#f4f0e4] focus:outline-none"
+            required
+          />
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            placeholder="Your Message"
+            rows={5}
+            className="w-full bg-transparent border-b-2 border-[#cfc7b7] p-2 placeholder-[#cfc7b7] text-[#f4f0e4] focus:outline-none"
+            required
+          ></textarea>
+          <button
+            type="submit"
+            className="bg-[#d99a2b] text-white px-6 py-2 rounded-full hover:opacity-90 transition-opacity"
+          >
+            Send Message
+          </button>
+        </form>
+
+        {status && <p className="mt-6 text-[#cfc7b7]">{status}</p>}
+      </div>
     </div>
   );
 }

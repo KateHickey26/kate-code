@@ -13,16 +13,18 @@ export async function POST(req: Request) {
     }
 
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      host: "smtp.sendgrid.net",
+      port: 587,
       auth: {
-        user: process.env.EMAIL, // gmail address to send emails from
-        pass: process.env.PASSWORD, // gmail account password
+        user: "apikey", // SendGrid API key
+        pass: process.env.SENDGRID_API_KEY,
       },
     });
 
     await transporter.sendMail({
-      from: process.env.EMAIL,
-      to: "kate.hickey26@gmail.com",
+      from: "hello@kate-code.com", 
+      to: process.env.EMAIL,
+      replyTo: email,
       subject: `New Contact Form Submission from ${name}`,
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
     });

@@ -8,7 +8,7 @@ const Header = () => {
 
   return (
     <header
-      className="relative bg-gray-800 text-white py-4 z-10 transition-colors duration-300"
+      className="relative bg-[#f4f0e4] text-black py-4 z-10 transition-colors duration-300"
       data-scroll
       data-scroll-class="bg-gray-900"
   
