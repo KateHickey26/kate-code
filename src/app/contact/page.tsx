@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 interface FormData {
   name: string;
   email: string;
   message: string;
-  middleName?: string; // Honeypot
+  
 }
 
 export default function Contact() {
